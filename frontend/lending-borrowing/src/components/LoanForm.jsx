@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import axios from "axios";
 import { getContract } from "../Contract";
 
 const LoanForm = () => {
+  const [name, setName] = useState("");
   const [amount, setAmount] = useState("");
   const [duration, setDuration] = useState("");
   const [loading, setLoading] = useState(false);
@@ -18,6 +20,14 @@ const LoanForm = () => {
 
       const tx = await contract.requestLoan(amount, duration);
       await tx.wait(); // Wait for transaction confirmation
+ axios.post("http://localhost:5000/api/addLoans", {
+    name,
+    borrower: contract.signer.getAddress(),
+    amount,
+    duration,
+ })
+
+
 
       alert("Loan Requested Successfully!");
     } catch (error) {
@@ -31,6 +41,15 @@ const LoanForm = () => {
   return (
     <div className="card p-4">
       <h3>Request a Loan</h3>
+
+      <input
+        type="text"
+        className="form-control my-2"
+        placeholder="Enter your name"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+      />
+
       <input
         type="number"
         className="form-control my-2"
@@ -41,7 +60,7 @@ const LoanForm = () => {
       <input
         type="number"
         className="form-control my-2"
-        placeholder="Duration (days)"
+        placeholder="Duration(days)"
         value={duration}
         onChange={(e) => setDuration(e.target.value)}
       />
