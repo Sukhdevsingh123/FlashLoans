@@ -145,7 +145,7 @@ npx hardhat run scripts/deploy.js --network sepolia
 
 ### **2️⃣ Verify Contract** (Optional)  
 ```bash
-forfe script script/DeployScript.s.sol --rpc-url YOUR SEPOLIA URL --private-key PRIVATE KEY --broadcast --verify
+forge script script/DeployScript.s.sol --rpc-url YOUR SEPOLIA URL --private-key PRIVATE KEY --broadcast --verify
 ```
 
 ---
