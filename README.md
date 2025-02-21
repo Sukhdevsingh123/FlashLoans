@@ -1,59 +1,65 @@
-🏦 Decentralized Lending & Borrowing DApp
-A blockchain-based lending & borrowing platform built using React, Solidity, and Node.js. It enables borrowers to request loans and lenders to fund them securely using smart contracts and ERC-20 tokens.
+## 🏦 **Decentralized Lending & Borrowing DApp**  
 
-🚀 Features
-✅ ERC-20 Token Integration (MyToken.sol)
-✅ Lending & Borrowing Smart Contracts
-✅ Wallet Connection & Account Detection
-✅ Loan History Tracking
-✅ Dynamic Interest Rates
-✅ Multi-Chain Support (Ethereum, Sepolia, etc.)
-✅ Email Notifications for Loan Status Updates
-✅ USDC Transfers & Crypto Payments
+A **blockchain-based lending & borrowing platform** built using **React, Solidity, and Node.js**. It enables borrowers to request loans and lenders to fund them securely using **smart contracts and ERC-20 tokens**.  
 
-🛠️ Tech Stack
-Frontend: React.js (Vite), Tailwind CSS / Bootstrap, ethers.js
-Backend: Node.js, Express.js, MongoDB, Nodemailer
-Blockchain & Smart Contracts: Solidity, Hardhat, OpenZeppelin
-Storage: IPFS/Arweave for Proofs
-📂 Project Structure
-Frontend (frontend/):
-pgsql
-Copy
-Edit
+### 🚀 **Features**  
+✅ **ERC-20 Token Integration** (`MyToken.sol`)  
+✅ **Lending & Borrowing Smart Contracts**  
+✅ **Wallet Connection & Account Detection**  
+✅ **Loan History Tracking**  
+✅ **Dynamic Interest Rates**  
+✅ **Multi-Chain Support (Ethereum, Sepolia, etc.)**  
+✅ **Email Notifications for Loan Status Updates**  
+✅ **USDC Transfers & Crypto Payments**  
+
+### 🛠️ **Tech Stack**  
+- **Frontend:** React.js (Vite), Tailwind CSS / Bootstrap, ethers.js  
+- **Backend:** Node.js, Express.js, MongoDB, Nodemailer  
+- **Blockchain & Smart Contracts:** Solidity, Hardhat, OpenZeppelin  
+- **Storage:** IPFS/Arweave for Proofs  
+
+---
+
+## 📂 **Project Structure**  
+
+### **Frontend (`frontend/`):**  
+```
 frontend
  ┣ 📂 src
  ┃ ┣ 📂 components
- ┃ ┃ ┣ 📜 Navbar.jsx
- ┃ ┃ ┣ 📜 LoanForm.jsx
- ┃ ┃ ┣ 📜 LoanList.jsx
- ┃ ┃ ┣ 📜 LoanHistory.jsx
- ┃ ┃ ┣ 📜 WalletConnect.jsx
- ┃ ┃ ┣ 📜 Notifications.jsx
+ ┃ ┃ ┣ 📝 Navbar.jsx
+ ┃ ┃ ┣ 📝 LoanForm.jsx
+ ┃ ┃ ┣ 📝 LoanList.jsx
+ ┃ ┃ ┣ 📝 LoanHistory.jsx
+ ┃ ┃ ┣ 📝 WalletConnect.jsx
+ ┃ ┃ ┣ 📝 Notifications.jsx
  ┃ ┣ 📂 pages
- ┃ ┃ ┣ 📜 Home.jsx
- ┃ ┃ ┣ 📜 BorrowerDashboard.jsx
- ┃ ┃ ┣ 📜 LenderDashboard.jsx
- ┃ ┣ 📜 App.jsx
- ┃ ┣ 📜 contract.js
- ┃ ┣ 📜 index.js
- ┣ 📜 package.json
- ┣ 📜 .env
-Backend (backend/):
-pgsql
-Copy
-Edit
+ ┃ ┃ ┣ 📝 Home.jsx
+ ┃ ┃ ┣ 📝 BorrowerDashboard.jsx
+ ┃ ┃ ┣ 📝 LenderDashboard.jsx
+ ┃ ┣ 📝 App.jsx
+ ┃ ┣ 📝 contract.js
+ ┃ ┣ 📝 index.js
+ ┣ 📝 package.json
+ ┣ 📝 .env
+```
+
+### **Backend (`backend/`):**  
+```
 backend
- ┣ 📜 server.js
- ┣ 📜 routes.js
- ┣ 📜 db.js
- ┣ 📜 emailService.js
- ┣ 📜 package.json
-⚡ Smart Contracts
-1️⃣ ERC-20 Token Contract (MyToken.sol)
-solidity
-Copy
-Edit
+ ┣ 📝 server.js
+ ┣ 📝 routes.js
+ ┣ 📝 db.js
+ ┣ 📝 emailService.js
+ ┣ 📝 package.json
+```
+
+---
+
+## ⚡ **Smart Contracts**  
+
+### **1️⃣ ERC-20 Token Contract (`MyToken.sol`)**
+```solidity
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.18;
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
@@ -63,73 +69,90 @@ contract MyToken is ERC20 {
         _mint(msg.sender, initialSupply * 10 ** decimals());
     }
 }
-2️⃣ Lending & Borrowing Contract (LendingBorrowing.sol)
+```
+
+### **2️⃣ Lending & Borrowing Contract (`LendingBorrowing.sol`)**  
 Manages loan requests, funding, repayments, and interest rates.
 
-🚀 Getting Started
-1️⃣ Clone the Repository
-bash
-Copy
-Edit
+---
+
+## 🚀 **Getting Started**  
+
+### **1️⃣ Clone the Repository**  
+```bash
 git clone https://github.com/YOUR_GITHUB_USERNAME/lending-borrowing-dapp.git
 cd lending-borrowing-dapp
-2️⃣ Install Dependencies
-📌 Frontend
-bash
-Copy
-Edit
+```
+
+### **2️⃣ Install Dependencies**  
+
+#### 📌 **Frontend**  
+```bash
 cd frontend
 npm install
-📌 Backend
-bash
-Copy
-Edit
+```
+
+#### 📌 **Backend**  
+```bash
 cd backend
 npm install
-📜 Environment Setup
-Create a .env file in both frontend and backend folders.
+```
 
-Backend .env file:
-ini
-Copy
-Edit
+---
+
+## 📝 **Environment Setup**  
+
+Create a `.env` file in both frontend and backend folders.  
+
+#### **Backend `.env` file:**  
+```ini
 MONGO_URI=your_mongodb_connection
 PRIVATE_KEY=your_wallet_private_key
 SMTP_EMAIL=your_smtp_email
 SMTP_PASSWORD=your_smtp_password
-Frontend .env file:
-ini
-Copy
-Edit
+```
+
+#### **Frontend `.env` file:**  
+```ini
 VITE_CONTRACT_ADDRESS=your_deployed_contract_address
 VITE_INFURA_API_KEY=your_infura_api_key
-🚀 Run the Project
-Start Backend
-bash
-Copy
-Edit
+```
+
+---
+
+## 🚀 **Run the Project**  
+
+### **Start Backend**  
+```bash
 cd backend
 node server.js
-Start Frontend
-bash
-Copy
-Edit
+```
+
+### **Start Frontend**  
+```bash
 cd frontend
 npm run dev
-📜 Deploying Smart Contracts
-1️⃣ Compile & Deploy on Sepolia Testnet
-bash
-Copy
-Edit
+```
+
+---
+
+## 📝 **Deploying Smart Contracts**  
+
+### **1️⃣ Compile & Deploy on Sepolia Testnet**  
+```bash
 npx hardhat run scripts/deploy.js --network sepolia
-2️⃣ Verify Contract (Optional)
-bash
-Copy
-Edit
+```
+
+### **2️⃣ Verify Contract** (Optional)  
+```bash
 npx hardhat verify --network sepolia YOUR_CONTRACT_ADDRESS
-📌 Contribution
-Feel free to fork this repo, create a new branch, and submit a pull request! 🚀
+```
 
-💡 I'm currently working on improving loan tracking, dynamic interest rates, and multi-chain support! 🔥
+---
 
+## 📀 **Contribution**  
+
+Feel free to **fork** this repo, create a **new branch**, and submit a **pull request**! 🚀  
+
+💡 _I'm currently working on improving loan tracking, dynamic interest rates, and multi-chain support!_ 🔥
 
